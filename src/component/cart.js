@@ -5,13 +5,13 @@ import { connect } from 'react-redux';
 function Cart(props) {
 
   return (
-    <>
+    <div>
       {props.cart.map(product => {
         return (
-          <h5>{product}</h5>
+          <h5 key={product}>{product}</h5>
         )
       })}
-    </>
+    </div>
   )
 }
 
