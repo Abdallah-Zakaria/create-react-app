@@ -21,9 +21,3 @@ export default (state = initialState, action) => {
   }
 }
 
-export const activeCategory = (name) => {
-  return {
-    type: 'ACTIVE',
-    payload: name,
-  }
-}
