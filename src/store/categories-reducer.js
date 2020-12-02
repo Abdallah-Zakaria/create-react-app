@@ -16,6 +16,8 @@ export default (state = initialState, action) => {
       const categories = state.categories;
       const active = payload;
       return { categories, active };
+    case 'GET_C':
+      return { categories: payload.categories, active: state.active }
     default:
       return state;
   }
