@@ -15,10 +15,18 @@ export default (state = initialState, action) => {
   const { payload, type } = action;
   switch (type) {
     case 'ACTIVE':
-      const products = initialState.products.filter((product) => {
+      const productsActive = initialState.products.filter((product) => {
         return product.category === payload;
       })
-      return { products };
+      return { products: productsActive };
+    case 'ADD':
+      const productsAdd = state.products.map((product) => {
+        if (product.name === payload.name) {
+          product.count = product.count - 1;
+        }
+        return product;
+      })
+      return { products: productsAdd };
     default:
       return state
   }
